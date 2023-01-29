@@ -30,15 +30,15 @@ public class Paddle extends Entity {
             pongScreen.getGame().getSoundEngine().playSound("paddle.wav");
 
             if(collisionSide == CollisionSide.TOP) {
-                ball.setYVelocity(-3);
+                ball.setYVelocity(-2);
             }else if(collisionSide == CollisionSide.BOTTOM) {
-                ball.setYVelocity(3);
+                ball.setYVelocity(2);
             }else if(collisionSide == CollisionSide.LEFT) {
-                ball.setXVelocity(-3+(getXVelocity()*2));
-                ball.setYVelocity(-3);
+                ball.setXVelocity(-2+(getXVelocity()*2));
+                ball.setYVelocity(-2);
             }else if(collisionSide == CollisionSide.RIGHT) {
-                ball.setXVelocity(3+(getXVelocity()*2));
-                ball.setYVelocity(-3);
+                ball.setXVelocity(2+(getXVelocity()*2));
+                ball.setYVelocity(-2);
             }
 
             return TickResult.DEFAULT;
@@ -52,9 +52,9 @@ public class Paddle extends Entity {
             setX(gameScreen.getGame().getWidth()-getWidth());
         }else {
             if(isLeftDown) {
-                setXVelocity(-4);
+                setXVelocity(-3);
             }else if(isRightDown) {
-                setXVelocity(4);
+                setXVelocity(3);
             }else {
                 setXVelocity(0);
             }
